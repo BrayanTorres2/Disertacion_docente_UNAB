@@ -1,0 +1,95 @@
+# Comandos para instalar librerías de Python desde CMD (Windows)
+
+## Recomendación inicial
+
+Actualizar `pip` antes de instalar dependencias:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+---
+
+## Librerías base de análisis de datos
+
+```bash
+python -m pip install pandas
+python -m pip install numpy
+```
+
+---
+
+## Librerías de visualización
+
+```bash
+python -m pip install matplotlib
+python -m pip install seaborn
+python -m pip install plotly
+```
+
+---
+
+## Librerías de Machine Learning (scikit-learn)
+
+```bash
+python -m pip install scikit-learn
+```
+
+Incluye:
+
+* `train_test_split`
+* `KFold`
+* `roc_auc_score`
+* `RandomForestClassifier`
+* `AdaBoostClassifier`
+* `svm`
+
+---
+
+## Modelos avanzados de Gradient Boosting
+
+```bash
+python -m pip install catboost
+python -m pip install lightgbm
+python -m pip install xgboost
+```
+
+---
+
+## Jupyter Notebook (requerido para `%matplotlib inline`)
+
+```bash
+python -m pip install notebook
+python -m pip install ipykernel
+```
+
+Registrar el kernel:
+
+```bash
+python -m ipykernel install --user
+```
+
+---
+
+## Instalación completa en un solo comando (opcional)
+
+```bash
+python -m pip install pandas numpy matplotlib seaborn plotly scikit-learn catboost lightgbm xgboost notebook ipykernel
+```
+
+---
+
+## Verificación de la instalación (opcional)
+
+Ejecutar en CMD:
+
+```bash
+python
+```
+
+Luego en Python:
+
+```python
+import pandas, numpy, matplotlib, seaborn, plotly, sklearn, catboost, lightgbm, xgboost
+print("Todo OK")
+```
