@@ -1,6 +1,6 @@
 # Detección de fraude con tarjetas de crédito
 
-# Tabla de Contenidos  
+# Tabla de Contenidos Descripción 
 ## Detección de Fraude con Tarjetas de Crédito
 
 - [Detección de Fraude con Tarjetas de Crédito](#detección-de-fraude-con-tarjetas-de-crédito)
@@ -19,19 +19,16 @@
     - [Balance entre precisión y experiencia del cliente](#35-balance-entre-precisión-y-experiencia-del-cliente)
   - [Conclusión](#4-conclusión)
 
-## Tabla de Contenidos
+## Tabla de Contenido Solución
 
 - [Entorno Virtual en Python (Ciencia de Datos)](#entorno-virtual-en-python-ciencia-de-datos)
   - [Pasos básicos para usar un entorno virtual](#pasos-básicos-para-usar-un-entorno-virtual)
-
 - [Random Forest para Clasificación](#random-forest-para-clasificación)
   - [Definición](#definición)
   - [¿Cómo funciona Random Forest en clasificación?](#cómo-funciona-random-forest-en-clasificación)
   - [Ventajas principales](#ventajas-principales)
   - [Conclusión](#conclusión)
-
 - [XGBoost: funcionamiento y por qué fue el mejor modelo](#xgboost-funcionamiento-y-por-qué-fue-el-mejor-modelo)
-
 - [Tabla comparativa Random Forest vs XGBoost](#tabla-comparativa-random-forest-vs-xgboost)
 
 
