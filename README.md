@@ -1,5 +1,25 @@
 # Detección de fraude con tarjetas de crédito
 
+# Tabla de Contenidos  
+## Detección de Fraude con Tarjetas de Crédito
+
+- [Detección de Fraude con Tarjetas de Crédito](#detección-de-fraude-con-tarjetas-de-crédito)
+  - [Descripción del problema](#1-descripción-del-problema)
+  - [Problemas técnicos del dataset](#2-problemas-técnicos-del-dataset)
+    - [Desbalance extremo de clases](#21-desbalance-extremo-de-clases)
+    - [Datos ruidosos y comportamiento cambiante](#22-datos-ruidosos-y-comportamiento-cambiante)
+    - [Falta de interpretabilidad](#23-falta-de-interpretabilidad)
+    - [Datos sensibles y transformados](#24-datos-sensibles-y-transformados)
+    - [Costos asimétricos de error](#25-costos-asimétricos-de-error)
+  - [¿Por qué es un problema complejo de Machine Learning?](#3-por-qué-es-un-problema-complejo-de-machine-learning)
+    - [Métricas de evaluación no triviales](#31-métricas-de-evaluación-no-triviales)
+    - [Necesidad de técnicas avanzadas](#32-necesidad-de-técnicas-avanzadas)
+    - [Requerimientos de tiempo real](#33-requerimientos-de-tiempo-real)
+    - [Evolución continua del fraude](#34-evolución-continua-del-fraude)
+    - [Balance entre precisión y experiencia del cliente](#35-balance-entre-precisión-y-experiencia-del-cliente)
+  - [Conclusión](#4-conclusión)
+
+
 ## Descripción del problema, retos técnicos y complejidad en Machine Learning
 
 ---
