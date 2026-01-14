@@ -132,3 +132,15 @@ Este balance convierte el problema en una combinación de **Machine Learning + o
 ## 4. Conclusión
 
 La detección de fraude con tarjetas de crédito es un problema de Machine Learning **altamente complejo** debido al desbalance extremo de datos, la naturaleza dinámica del fraude, los altos costos de error y los estrictos requisitos de interpretabilidad y tiempo real. No se trata solo de entrenar un modelo preciso, sino de diseñar una solución robusta, explicable y alineada con los objetivos del negocio financiero.
+
+
+# Entorno Virtual en Python (Ciencia de Datos)
+
+Un **entorno virtual en Python** es un espacio aislado que permite instalar y administrar librerías de forma independiente para cada proyecto. En **ciencia de datos**, su uso es clave para evitar conflictos de versiones, garantizar reproducibilidad de los análisis y mantener proyectos organizados.
+
+## Pasos básicos para usar un entorno virtual
+
+1. **Crear el entorno**
+```bash
+python -m venv venv
+![Diagrama de entornos virtuales en Python](https://jarroba.com/wp-content/uploads/2020/09/Crear-Virtualenv-entornos-virutals-en-Python-www.Jarroba.com_-1024x588.png)
