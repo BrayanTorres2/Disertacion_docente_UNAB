@@ -141,7 +141,7 @@ Un **entorno virtual en Python** es un espacio aislado que permite instalar y ad
 ## Pasos básicos para usar un entorno virtual
 
 1. **Crear el entorno**
-```bash
+
 python -m venv venv
-```bash
+
 ![Diagrama de entornos virtuales en Python](https://jarroba.com/wp-content/uploads/2020/09/Crear-Virtualenv-entornos-virutals-en-Python-www.Jarroba.com_-1024x588.png)
