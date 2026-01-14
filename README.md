@@ -211,4 +211,23 @@ XGBoost fue el mejor modelo porque:
 - Mostró **alta consistencia entre validación y prueba**
 - Alcanzó el **AUC más alto** en el problema de detección de fraude
 
+## tabla comparativa Random Forest vs XGBoost  
+
+| Característica                     | Random Forest                                   | XGBoost                                              |
+|-----------------------------------|-------------------------------------------------|------------------------------------------------------|
+| Tipo de algoritmo                 | Ensemble basado en *bagging*                    | Ensemble basado en *gradient boosting*               |
+| Forma de entrenamiento            | Árboles entrenados en paralelo                 | Árboles entrenados de forma secuencial               |
+| Objetivo principal                | Reducir la varianza                             | Reduccir el sesgo y la varianza                      |
+| Corrección de errores             | No corrige errores previos                      | Cada árbol corrige los errores del anterior          |
+| Manejo de relaciones no lineales  | Bueno                                           | Excelente                                            |
+| Regularización                    | Implícita (por promedio de árboles)             | Explícita (L1 y L2)                                  |
+| Riesgo de overfitting             | Bajo                                            | Bajo si está bien regularizado                       |
+| Manejo de datos desbalanceados    | Bueno (con ajustes)                             | Muy bueno (scale_pos_weight)                         |
+| Uso de gradientes                 | No                                              | Sí (primer y segundo orden)                          |
+| Velocidad de entrenamiento        | Rápida                                          | Media (más costosa computacionalmente)               |
+| Interpretabilidad                 | Media                                           | Baja                                                 |
+| Sensibilidad a hiperparámetros    | Baja                                            | Alta                                                 |
+| Rendimiento típico (AUC)          | Bueno                                           | Muy alto                                             |
+| Casos de uso ideales              | Modelos base y benchmarks rápidos               | Problemas complejos como detección de fraude         |
+| Resultado en este dataset         | AUC ≈ 0.85                                      | AUC ≈ 0.97                                           |
 
