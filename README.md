@@ -180,9 +180,11 @@ Es un modelo de tipo **ensemble**, específicamente *bagging* (Bootstrap Aggrega
 ## Representación matemática (fórmula)
 
 Sea:
-- \( T = \{h_1(x), h_2(x), \dots, h_N(x)\} \) el conjunto de árboles entrenados.
-- \( h_i(x) \) la predicción del árbol \( i \).
-- \( N \) el número total de árboles.
+
+- T = {h1(x), h2(x), ..., hN(x)} el conjunto de árboles entrenados  
+- hi(x) la predicción del árbol i  
+- N el número total de árboles  
+- C el conjunto de clases posibles  
 
 La predicción final del Random Forest para clasificación es:
 
