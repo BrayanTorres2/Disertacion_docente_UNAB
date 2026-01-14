@@ -151,33 +151,34 @@ python -m venv venv
 ## Definición
 
 **Random Forest (Bosque Aleatorio)** es un algoritmo de *Machine Learning* supervisado, utilizado para **clasificación y regresión**, que se basa en la construcción de múltiples **árboles de decisión** durante el entrenamiento.  
-Para clasificación, el modelo toma la **clase más votada** por todos los árboles como resultado final.
 
-Es un modelo de tipo **ensemble**, específicamente *bagging* (Bootstrap Aggregating), cuyo objetivo principal es **reducir el sobreajuste** y mejorar la capacidad de generalización.
+En clasificación, el modelo toma la **clase más votada** por todos los árboles como predicción final.
+
+Es un modelo de tipo **ensemble**, específicamente **bagging (Bootstrap Aggregating)**, cuyo objetivo principal es **reducir el sobreajuste** y mejorar la capacidad de generalización.
 
 ---
 
 ## ¿Cómo funciona Random Forest en clasificación?
 
-1. **Bootstrap del dataset**  
-   - Se crean múltiples subconjuntos del dataset original mediante muestreo aleatorio **con reemplazo**.
-   - Cada subconjunto se utiliza para entrenar un árbol de decisión distinto.
+**1. Bootstrap del dataset**  
+- Se generan múltiples subconjuntos del dataset original mediante muestreo aleatorio **con reemplazo**.  
+- Cada subconjunto se utiliza para entrenar un árbol de decisión distinto.
 
-2. **Selección aleatoria de variables (feature randomness)**  
-   - En cada nodo del árbol, solo se evalúa un subconjunto aleatorio de características.
-   - Esto reduce la correlación entre árboles y aumenta la diversidad del bosque.
+**2. Selección aleatoria de variables (feature randomness)**  
+- En cada nodo del árbol, solo se evalúa un subconjunto aleatorio de características.  
+- Esto reduce la correlación entre los árboles y aumenta la diversidad del bosque.
 
-3. **Entrenamiento de múltiples árboles**  
-   - Cada árbol se entrena de forma independiente.
-   - Los árboles suelen crecer sin poda (árboles profundos).
+**3. Entrenamiento de múltiples árboles**  
+- Cada árbol se entrena de forma independiente.  
+- Generalmente los árboles crecen sin poda, lo que aumenta su varianza individual.
 
-4. **Votación mayoritaria**  
-   - Para una nueva observación, cada árbol predice una clase.
-   - La clase final es la que obtiene **mayor número de votos**.
+**4. Votación mayoritaria**  
+- Para una nueva observación, cada árbol predice una clase.  
+- La clase final es la que obtiene **mayor número de votos**.
 
 ---
 
-## Representación matemática (fórmula)
+## Representación matemática (formato compatible con GitHub)
 
 Sea:
 
@@ -186,48 +187,55 @@ Sea:
 - N el número total de árboles  
 - C el conjunto de clases posibles  
 
-La predicción final del Random Forest para clasificación es:
+La predicción final del Random Forest para clasificación se define como:
 
-\[
-\hat{y} = \underset{c \in C}{\arg\max} \sum_{i=1}^{N} \mathbb{I}(h_i(x) = c)
-\]
+y_hat = clase c en C que maximiza la suma de votos:
+
+sumatoria desde i = 1 hasta N de I(hi(x) = c)
 
 Donde:
-- \( C \) es el conjunto de clases.
-- \( \mathbb{I}(\cdot) \) es la función indicadora, que vale 1 si la condición se cumple y 0 en caso contrario.
+
+- I(condición) es la función indicadora  
+- I(hi(x) = c) = 1 si el árbol i predice la clase c  
+- I(hi(x) = c) = 0 en caso contrario  
+
+En términos simples:  
+**la clase con más votos entre todos los árboles es la predicción final**.
 
 ---
 
-## Función de impureza (criterio de división)
+## Funciones de impureza (criterios de división)
 
-En clasificación, Random Forest suele utilizar:
+Durante la construcción de cada árbol, se utilizan métricas de impureza para decidir las divisiones en los nodos.
 
 ### Índice de Gini
-\[
-Gini = 1 - \sum_{j=1}^{K} p_j^2
-\]
+
+Gini = 1 - (p1^2 + p2^2 + ... + pK^2)
 
 ### Entropía
-\[
-Entropy = - \sum_{j=1}^{K} p_j \log_2(p_j)
-\]
+
+Entropy = - (p1 * log2(p1) + p2 * log2(p2) + ... + pK * log2(pK))
 
 Donde:
-- \( K \) es el número de clases.
-- \( p_j \) es la proporción de muestras de la clase \( j \) en el nodo.
+
+- K es el número de clases  
+- pj es la proporción de muestras pertenecientes a la clase j en el nodo  
 
 ---
 
 ## Ventajas principales
 
-- Maneja bien **datasets desbalanceados** (con ajustes).
-- Reduce el **overfitting** frente a un árbol individual.
-- Funciona bien con datos no lineales.
-- Requiere poco preprocesamiento.
+- Reduce significativamente el **overfitting** frente a un árbol de decisión individual  
+- Maneja bien relaciones **no lineales y complejas**  
+- Es robusto ante **ruido y outliers**  
+- Funciona correctamente con datasets de **alta dimensionalidad**  
+- Requiere poco preprocesamiento de los datos  
+- Puede manejar datasets **desbalanceados** con técnicas como `class_weight`  
 
 ---
 
 ## Conclusión
 
-Random Forest es un algoritmo robusto y ampliamente utilizado en clasificación, especialmente en problemas complejos como **detección de fraude**, debido a su capacidad para combinar múltiples modelos débiles y producir predicciones más estables y precisas mediante votación mayoritaria.
+Random Forest es un algoritmo **robusto, estable y ampliamente utilizado** para clasificación.  
+Es especialmente adecuado para problemas complejos como la **detección de fraude con tarjetas de crédito**, ya que combina múltiples modelos para producir predicciones más confiables mediante votación mayoritaria, reduciendo la varianza y mejorando la capacidad de generalización.
 
