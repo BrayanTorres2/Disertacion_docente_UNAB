@@ -194,3 +194,21 @@ Es un modelo de tipo **ensemble**, específicamente **bagging (Bootstrap Aggrega
 Random Forest es un algoritmo **robusto, estable y ampliamente utilizado** para clasificación.  
 Es especialmente adecuado para problemas complejos como la **detección de fraude con tarjetas de crédito**, ya que combina múltiples modelos para producir predicciones más confiables mediante votación mayoritaria, reduciendo la varianza y mejorando la capacidad de generalización.
 
+## XGBoost: funcionamiento y por qué fue el mejor modelo
+
+**XGBoost (Extreme Gradient Boosting)** es un algoritmo de *Machine Learning* basado en **gradient boosting**, que construye árboles de decisión de manera **secuencial**. Cada nuevo árbol se entrena para **corregir los errores** de los árboles anteriores, optimizando directamente una función de pérdida y sumando las predicciones de todos los árboles para obtener el resultado final.
+
+Funciona mediante:
+- Optimización iterativa de una **función objetivo** (pérdida + regularización)
+- Uso de **gradientes de primer y segundo orden** para mejorar la precisión del ajuste
+- Construcción eficiente de árboles priorizando las divisiones con mayor ganancia
+- Control de la complejidad del modelo mediante **regularización**
+
+XGBoost fue el mejor modelo porque:
+- Captura **relaciones no lineales complejas**
+- Maneja eficazmente el **desbalance de clases**
+- Reduce el **sobreajuste**
+- Mostró **alta consistencia entre validación y prueba**
+- Alcanzó el **AUC más alto** en el problema de detección de fraude
+
+
