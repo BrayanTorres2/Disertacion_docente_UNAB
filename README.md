@@ -145,3 +145,87 @@ Un **entorno virtual en Python** es un espacio aislado que permite instalar y ad
 python -m venv venv
 
 ![Diagrama de entornos virtuales en Python](https://jarroba.com/wp-content/uploads/2020/09/Crear-Virtualenv-entornos-virutals-en-Python-www.Jarroba.com_-1024x588.png)
+
+# Random Forest para Clasificación
+
+## Definición
+
+**Random Forest (Bosque Aleatorio)** es un algoritmo de *Machine Learning* supervisado, utilizado para **clasificación y regresión**, que se basa en la construcción de múltiples **árboles de decisión** durante el entrenamiento.  
+Para clasificación, el modelo toma la **clase más votada** por todos los árboles como resultado final.
+
+Es un modelo de tipo **ensemble**, específicamente *bagging* (Bootstrap Aggregating), cuyo objetivo principal es **reducir el sobreajuste** y mejorar la capacidad de generalización.
+
+---
+
+## ¿Cómo funciona Random Forest en clasificación?
+
+1. **Bootstrap del dataset**  
+   - Se crean múltiples subconjuntos del dataset original mediante muestreo aleatorio **con reemplazo**.
+   - Cada subconjunto se utiliza para entrenar un árbol de decisión distinto.
+
+2. **Selección aleatoria de variables (feature randomness)**  
+   - En cada nodo del árbol, solo se evalúa un subconjunto aleatorio de características.
+   - Esto reduce la correlación entre árboles y aumenta la diversidad del bosque.
+
+3. **Entrenamiento de múltiples árboles**  
+   - Cada árbol se entrena de forma independiente.
+   - Los árboles suelen crecer sin poda (árboles profundos).
+
+4. **Votación mayoritaria**  
+   - Para una nueva observación, cada árbol predice una clase.
+   - La clase final es la que obtiene **mayor número de votos**.
+
+---
+
+## Representación matemática (fórmula)
+
+Sea:
+- \( T = \{h_1(x), h_2(x), \dots, h_N(x)\} \) el conjunto de árboles entrenados.
+- \( h_i(x) \) la predicción del árbol \( i \).
+- \( N \) el número total de árboles.
+
+La predicción final del Random Forest para clasificación es:
+
+\[
+\hat{y} = \underset{c \in C}{\arg\max} \sum_{i=1}^{N} \mathbb{I}(h_i(x) = c)
+\]
+
+Donde:
+- \( C \) es el conjunto de clases.
+- \( \mathbb{I}(\cdot) \) es la función indicadora, que vale 1 si la condición se cumple y 0 en caso contrario.
+
+---
+
+## Función de impureza (criterio de división)
+
+En clasificación, Random Forest suele utilizar:
+
+### Índice de Gini
+\[
+Gini = 1 - \sum_{j=1}^{K} p_j^2
+\]
+
+### Entropía
+\[
+Entropy = - \sum_{j=1}^{K} p_j \log_2(p_j)
+\]
+
+Donde:
+- \( K \) es el número de clases.
+- \( p_j \) es la proporción de muestras de la clase \( j \) en el nodo.
+
+---
+
+## Ventajas principales
+
+- Maneja bien **datasets desbalanceados** (con ajustes).
+- Reduce el **overfitting** frente a un árbol individual.
+- Funciona bien con datos no lineales.
+- Requiere poco preprocesamiento.
+
+---
+
+## Conclusión
+
+Random Forest es un algoritmo robusto y ampliamente utilizado en clasificación, especialmente en problemas complejos como **detección de fraude**, debido a su capacidad para combinar múltiples modelos débiles y producir predicciones más estables y precisas mediante votación mayoritaria.
+
