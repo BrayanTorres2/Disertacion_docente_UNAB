@@ -250,4 +250,15 @@ XGBoost fue el mejor modelo porque:
 | Rendimiento típico (AUC)          | Bueno                                           | Muy alto                                             |
 | Casos de uso ideales              | Modelos base y benchmarks rápidos               | Problemas complejos como detección de fraude         |
 | Resultado en este dataset         | AUC ≈ 0.85                                      | AUC ≈ 0.97                                           |
+## Conclusión Final
+
+- Se realizó un análisis exploratorio completo del dataset, identificando el **desbalance de clases** y la relación entre las variables.
+- Se evaluaron distintos modelos predictivos utilizando una separación clara en **entrenamiento, validación y prueba**.
+- Los modelos basados en árboles mostraron un desempeño sólido, aunque con diferencias claras:
+  - **Random Forest** y **AdaBoost** obtuvieron resultados aceptables, pero limitados frente a modelos más avanzados.
+  - **CatBoost** mejoró el rendimiento, aunque sin alcanzar los mejores valores de AUC.
+- Los métodos de **gradient boosting** fueron los más efectivos:
+  - **XGBoost** destacó por su **alta capacidad de generalización**, logrando el mayor AUC en validación y prueba.
+  - **LightGBM** presentó un rendimiento muy competitivo, especialmente con validación cruzada.
+- En conjunto, los resultados confirman que los **ensembles de gradiente**, apoyados en técnicas de validación robustas, son la mejor opción para la **detección de fraude**, al capturar patrones complejos y manejar adecuadamente el desbalance de clases.
 
